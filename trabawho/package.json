@@ -1,0 +1,26 @@
+{
+  "name": "trabawho",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanarvin/labfinals.git"
+  },
+  "keywords": [
+    "labfinals"
+  ],
+  "author": "Sean Arvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seanarvin/labfinals/issues"
+  },
+  "homepage": "https://github.com/seanarvin/labfinals#readme"
+}
