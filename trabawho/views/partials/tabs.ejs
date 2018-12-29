@@ -1,3 +1,11 @@
+  
+
+  <% data.forEach(function(user){ %>
+
+  
+  
+ 
+
    <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
             <div class="team-member">
 
@@ -5,12 +13,15 @@
 
               <div class="text">
 
-                <h2 class="mb-2 font-weight-light h4">Brooke Cagle</h2>
-                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
+                <h2 class="mb-2 font-weight-light h4"><%= user.user %></h2>
+                <span class="d-block mb-2 text-white-opacity-05"> <%= user.service_name %></span>
+                <p class="mb-4">Address:  <%= user.address %></p>
                 <p>
-                  <button type="button" class="btn btn-dark " data-toggle="modal" data-target=".modal">Inquire</button>
+                  <button data-uid = "<%= user.user_id %>"
+                  data-sid = "<%= user.service_id %>" type="button" class="btn btn-dark " data-toggle="modal" data-target=".modal">Inquire</button>
               </div>
 
             </div>
 </div>
+
+  <% }); %>
