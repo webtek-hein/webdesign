@@ -1,20 +1,59 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const bodyParser = require('body-parser');
+const mysql = require('mysql')
+
+const app = express();
+
+
+const db = mysql.createConnection({
+	host	 : 'localhost',
+	user	 : 'root',
+	password : '',
+	database : 'db'
+});
+
+db.connect((err) => {
+	if (err) throw err;
+	console.log('Database connected.')
+});
+
+app.use('/assets', express.static('assets'));
+app.use(bodyParser.json());
 
 
 app.get('/',(req,res) => {
-	res.send('Index Page')
-})
+	res.send('Index Page');
+});
 
 app.get('/client/findservice',(req,res) =>{
-	res.send('Service List')
-})
+	res.send('Service List');
+});
 
 app.get('/client/transactions',(req,res) =>{
-	res.send('Transaction History')
-})
+	res.send('Transaction History');
+});
+
+app.get('/viewprofile',(req,res) =>{
+	res.send('Profile');
+});
+
+app.post('/client/request',(req,res)=> {
+ // client will do request
+});
+
+app.post('/client/:action',(req,res)=>{
+ // client will view or cancel
+ let {action} = req.params;
+ res.send(action);
+});
+
+app.post('/editprofile/',(req,res)=>{
+ // edit profile
+});
+
+
 
 app.listen(3000, (err)=>{
 	if(err) console.log('Error connecting to port 3000');
-	console.log('Connected to Port 3000')
-})
+	console.log('Connected to Port 3000');
+});
