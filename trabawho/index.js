@@ -23,7 +23,15 @@ app.set('view engine','ejs');
 
 
 app.get('/',(req,res) => {
-	res.render('index');
+	db.query(`SELECT CONCAT(u.user_fname," ",u.user_lname) as user,u.address,u.user_id,s.service_id, s.service_name
+			  FROM spservice sps 
+			  inner join services s on sps.service_id = s.service_id
+			  inner join user u on u.user_id = sps.uid;`, (error, results, fields) => {
+  			if (error) throw error;
+  			console.log(results[0]);
+			res.render('index', data = results);
+
+	});
 });
 
 app.get('/client/findservice',(req,res) =>{

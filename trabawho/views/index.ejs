@@ -24,12 +24,8 @@
 
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/modal.css">
-
   </head>
   <body>
-  
-    
-  
   <div class="site-wrap">
 
     <div class="site-navbar mt-4">
@@ -75,7 +71,7 @@
             </form>
           </div>
 
-        
+        <!--  -->
         </div>
 
         
@@ -93,113 +89,9 @@
       </div>
       <div class="container" data-aos="fade-up">
         <div class="row">
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
-            <div class="team-member">
+          <!-- Include service providers -->
+            <% include partials/tabs.ejs %>
 
-              <img src="/assets/images/person_1.jpg" alt="Image" class="img-fluid">
-
-              <div class="text">
-
-                <h2 class="mb-2 font-weight-light h4">Megan Smith</h2>
-                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
-                <p>
-                  <button type="button" class="btn btn-dark " data-toggle="modal" data-target=".modal">Inquire</button>
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
-            <div class="team-member">
-
-              <img src="/assets/images/person_2.jpg" alt="Image" class="img-fluid">
-
-              <div class="text">
-
-                <h2 class="mb-2 font-weight-light h4">Brooke Cagle</h2>
-                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
-                <p>
-                  <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".modal">Inquire</button>
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
-            <div class="team-member">
-
-              <img src="/assets/images/person_3.jpg" alt="Image" class="img-fluid">
-
-              <div class="text">
-
-                <h2 class="mb-2 font-weight-light h4">Philip Martin</h2>
-                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
-                <p>
-                  <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".modal">Inquire</button>
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
-            <div class="team-member">
-
-              <img src="/assets/images/person_4.jpg" alt="Image" class="img-fluid">
-
-              <div class="text">
-
-                <h2 class="mb-2 font-weight-light h4">Steven Ericson</h2>
-                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
-                <p>
-                  <button type="button" class="btn btn-dark " data-toggle="modal" data-target=".modal">Inquire</button>
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
-            <div class="team-member">
-
-              <img src="/assets/images/person_5.jpg" alt="Image" class="img-fluid">
-
-              <div class="text">
-
-                <h2 class="mb-2 font-weight-light h4">Nathan Dumlao</h2>
-                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
-                <p>
-                  <button type="button" class="btn btn-dark " data-toggle="modal" data-target=".modal">Inquire</button>
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
-            <div class="team-member">
-
-              <img src="/assets/images/person_6.jpg" alt="Image" class="img-fluid">
-
-              <div class="text">
-
-                <h2 class="mb-2 font-weight-light h4">Brooke Cagle</h2>
-                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
-                <p>
-                  <button type="button" class="btn btn-dark " data-toggle="modal" data-target=".modal">Inquire</button>
-              </div>
-
-            </div>
-          </div>
         </div>
       </div>
 
@@ -323,7 +215,14 @@
       </div>
     </div>
 
-  </div>
+  <% data.forEach(function(user){ %>
+  <%= user.user %>
+  <%= user.user_id %>
+  <%= user.service_id %>
+  <%= user.service_name %>
+  <%= user.address %>
+
+  <% }); %>
 
   <script src="/assets/js/jquery-3.3.1.min.js"></script>
   <script src="/assets/js/jquery-migrate-3.0.1.min.js"></script>
@@ -341,6 +240,5 @@
 
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/modal.js"></script>
-    
   </body>
 </html>
