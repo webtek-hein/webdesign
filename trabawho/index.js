@@ -39,8 +39,13 @@ app.get('/client/findservice',(req,res) =>{
 });
 
 app.get('/client/transactions',(req,res) =>{
-	res.send('Transaction History');
+	res.send('Transaction');
 });
+
+app.get('/client/history',(req,res) =>{
+	res.render('history');
+});
+
 
 app.get('/viewprofile',(req,res) =>{
 	res.send('Profile');
