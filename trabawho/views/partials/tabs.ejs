@@ -1,27 +1,19 @@
-  
+    <% data.forEach(function(user){ %>
+    <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+      <div class="team-member">
 
-  <% data.forEach(function(user){ %>
+        <img src="/assets/images/person_6.jpg" alt="Image" class="img-fluid">
 
-  
-  
- 
+        <div class="text">
 
-   <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
-            <div class="team-member">
-
-              <img src="/assets/images/person_6.jpg" alt="Image" class="img-fluid">
-
-              <div class="text">
-
-                <h2 class="mb-2 font-weight-light h4"><%= user.user %></h2>
-                <span class="d-block mb-2 text-white-opacity-05"> <%= user.service_name %></span>
-                <p class="mb-4">Address:  <%= user.address %></p>
-                <p>
-                  <button data-uid = "<%= user.user_id %>"
-                  data-sid = "<%= user.service_id %>" type="button" class="btn btn-dark " data-toggle="modal" data-target=".modal">Inquire</button>
-              </div>
-
+          <h2 class="mb-2 font-weight-light h4"><%= user.user %></h2>
+          <span class="d-block mb-2 text-white-opacity-05"> <%= user.service_name %></span>
+          <p class="mb-4">Address:  <%= user.address %></p>
+          <p>
+            <button data-uid = "<%= user.user_id %>"
+              data-sid = "<%= user.service_id %>" type="button" class="btn btn-dark " data-toggle="modal" data-target=".modal">Inquire</button>
             </div>
-</div>
 
-  <% }); %>
+          </div>
+        </div>
+        <% }); %>
