@@ -14,15 +14,16 @@ const db = mysql.createConnection({
 
 db.connect((err) => {
 	if (err) throw err;
-	console.log('Database connected.')
+	console.log('Database Connected')
 });
 
 app.use('/assets', express.static('assets'));
 app.use(bodyParser.json());
+app.set('view engine','ejs');
 
 
 app.get('/',(req,res) => {
-	res.send('Index Page');
+	res.render('index');
 });
 
 app.get('/client/findservice',(req,res) =>{
