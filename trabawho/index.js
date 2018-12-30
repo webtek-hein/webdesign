@@ -21,21 +21,25 @@ app.use('/assets', express.static('assets'));
 app.use(bodyParser.json());
 app.set('view engine','ejs');
 
-
+//index
 app.get('/',(req,res) => {
-	db.query(`SELECT CONCAT(u.user_fname," ",u.user_lname) as user,u.address,u.user_id,s.service_id, s.service_name
-			  FROM spservice sps 
-			  inner join services s on sps.service_id = s.service_id
-			  inner join user u on u.user_id = sps.uid;`, (error, results, fields) => {
-  			if (error) throw error;
-  			console.log(results[0]);
+	db.query(`SELECT uid,s.service_id,address,service_name,CONCAT(user_fname,' ',user_lname) as user from user 
+		inner join spservice sps on sps.uid = user.user_id
+		inner join services s on sps.service_id = s.service_id`, (error, results, fields) => {
+			if (error) throw error;
+			console.log(results[0]);
 			res.render('index', data = results);
 
-	});
+		});
 });
 
-app.get('/client/findservice',(req,res) =>{
-	res.send('Service List');
+app.get('/serviceworks/:id',(req,res) =>{
+	db.query(`SELECT work_id,services.service_id,description from work 
+			  inner join services on services.service_id = work.service_id where services.service_id = ?`,
+			  [req.params.id],(error, results, fields) => {
+			if (error) throw error;
+			res.json(results)
+		});
 });
 
 app.get('/client/transactions',(req,res) =>{

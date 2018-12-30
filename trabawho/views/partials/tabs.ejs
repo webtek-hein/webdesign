@@ -10,8 +10,8 @@
           <span class="d-block mb-2 text-white-opacity-05"> <%= user.service_name %></span>
           <p class="mb-4">Address:  <%= user.address %></p>
           <p>
-            <button data-uid = "<%= user.user_id %>"
-              data-sid = "<%= user.service_id %>" type="button" class="btn btn-dark " data-toggle="modal" data-target=".modal">Inquire</button>
+            <button data-uid = "<%= user.uid %>" data-servicename = "<%= user.service_name %>"
+              data-sid = "<%= user.service_id %>" type="button" class="btn btn-dark inquire" data-toggle="modal" data-target=".modal">Request</button>
             </div>
 
           </div>
