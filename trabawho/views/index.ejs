@@ -65,9 +65,9 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           <form action="#" method="post" class="site-block-subscribe">
             <div class="input-group mb-3">
-              <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Search for services" aria-label="Enter Email" aria-describedby="button-addon2">
+              <input id ="searchinput" type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Search for services" aria-label="Enter Email" aria-describedby="button-addon2">
               <div class="input-group-append">
-                <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+                <button id="searchsp" class="btn btn-primary" type="button" id="button-addon2">Search</button>
               </div>
             </div>
           </form>
@@ -81,7 +81,7 @@
   </div>
 
 
-  <div class="site-section bg-light">
+  <div id="spdiv" class="site-section bg-light">
     <div class="container">
       <div class="row align-items-center justify-content-center">
         <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="400">
@@ -90,7 +90,7 @@
       </div>
     </div>
     <div class="container" data-aos="fade-up">
-      <div class="row">
+      <div id="servicep-list" class="row">
         <!-- Include service providers -->
         <% include partials/tabs.ejs %>
 
@@ -98,24 +98,7 @@
     </div>
    <!-- Include service providers -->
     <% include modals/request.ejs %>
-    
-    <div class="container mt-5" data-aos="fade-up">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <div class="site-block-27">
-            <ul>
-              <li><a href="#">&lt;</a></li>
-              <li class="active"><span>1</span></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">&gt;</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
 
 </div>
@@ -154,5 +137,6 @@
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/modal.js"></script>
 <script src="/assets/js/custom.js"></script>
+<script type="text/javascript" src='/assets/js/steps.js'></script>
 </body>
 </html>

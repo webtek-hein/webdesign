@@ -42,11 +42,35 @@ app.get('/serviceworks/:id',(req,res) =>{
 		});
 });
 
-app.get('/client/transactions',(req,res) =>{
+app.get('/specifics/:id',(req,res) =>{
+	db.query(`SELECT * FROM specifics
+			  inner join services on services.service_id = specifics.service_id 
+			  where services.service_id = ?`,
+			  [req.params.id],(error, results, fields) => {
+			if (error) throw error;
+			res.json(results)
+		});
+});
+
+app.get('/search/:value',(req,res) => {
+	let where = ``;
+	if (req.params.value){
+		where = `where s.service_name = "`+req.params.value+`"`;
+	}
+	db.query(`SELECT uid,s.service_id,address,service_name,CONCAT(user_fname,' ',user_lname) as user from user 
+		inner join spservice sps on sps.uid = user.user_id
+		inner join services s on sps.service_id = s.service_id ${where}`, 
+		(error, results, fields) => {
+			if (error) throw error;
+			res.json(results)
+		});
+});
+
+app.get('/transactions',(req,res) =>{
 	res.send('Transaction');
 });
 
-app.get('/client/history',(req,res) =>{
+app.get('/history',(req,res) =>{
 	res.render('history');
 });
 
@@ -56,7 +80,14 @@ app.get('/viewprofile',(req,res) =>{
 });
 
 app.post('/client/request',(req,res)=> {
- // client will do request
+	let client_id = 7;
+	let data = req.body;
+ 	// client will do request
+ 	db.query('INSERT INTO requests SET ? , client_id = ? ',[data,client_id], (error, results, fields) => {
+  		if (error) throw error;
+	 	res.json(data);
+	});
+
 });
 
 app.post('/client/:action',(req,res)=>{
