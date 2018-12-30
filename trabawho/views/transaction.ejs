@@ -24,8 +24,6 @@
 
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/modal.css">
-  <script src="/assets/js/jquery-3.3.1.min.js"></script>
-
 </head>
 <body>
   <div class="site-wrap">
@@ -34,7 +32,7 @@
       <div class="container py-1">
         <div class="row align-items-center">
           <div class="col-8 col-md-8 col-lg-4">
-            <h1 class="mb-0"><a href="/" class="text-white h2 mb-0"><strong>TrabaWho<span class="text-primary"></span></strong></a></h1>
+            <h1 class="mb-0"><a href="#" class="text-white h2 mb-0"><strong>TrabaWho<span class="text-primary">.</span></strong></a></h1>
           </div>
           <div class="col-4 col-md-4 col-lg-8">
             <!-- Include navigation -->
@@ -60,50 +58,42 @@
     <div class="container">
       <div class="row align-items-center justify-content-center">
         <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="400">
-
-          <h2 class="text-white h1">Tagline</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <form action="#" method="post" class="site-block-subscribe">
-            <div class="input-group mb-3">
-              <input id ="searchinput" type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Search for services" aria-label="Enter Email" aria-describedby="button-addon2">
-              <div class="input-group-append">
-                <button id="searchsp" class="btn btn-primary" type="button" id="button-addon2">Search</button>
-              </div>
-            </div>
-          </form>
+          <h2 class="text-white h1">HISTORY</h2>
         </div>
-
-        <!--  -->
       </div>
-
-
     </div>
   </div>
 
 
-  <div id="spdiv" class="site-section bg-light">
+  <div class="site-section bg-light">
     <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="400">
-          <h2>Service Providers</h2>
-        </div>
-      </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Service</th>
+                                        <th>Service Provider</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Date Requested</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
-    <div class="container" data-aos="fade-up">
-      <div id="servicep-list" class="row">
-        <!-- Include service providers -->
-        <% include partials/tabs.ejs %>
-
-      </div>
-    </div>
-   <!-- Include service providers -->
-    <% include modals/request.ejs %>
-
   </div>
-
-</div>
-
-
 
 <div class="bg-primary" data-aos="fade">
   <div class="container">
@@ -120,7 +110,7 @@
 
 
 
-
+<script src="/assets/js/jquery-3.3.1.min.js"></script>
 <script src="/assets/js/jquery-migrate-3.0.1.min.js"></script>
 <script src="/assets/js/jquery-ui.js"></script>
 <script src="/assets/js/popper.min.js"></script>
@@ -136,7 +126,5 @@
 
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/modal.js"></script>
-<script src="/assets/js/custom.js"></script>
-<script type="text/javascript" src='/assets/js/steps.js'></script>
 </body>
 </html>

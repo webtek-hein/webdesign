@@ -67,7 +67,7 @@ app.get('/search/:value',(req,res) => {
 });
 
 app.get('/transactions',(req,res) =>{
-	res.send('Transaction');
+	res.render('transaction');
 });
 
 app.get('/history',(req,res) =>{
